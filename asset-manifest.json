@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.js": "/accelerometer-app/static/js/main.e3622da2.chunk.js",
+    "main.js.map": "/accelerometer-app/static/js/main.e3622da2.chunk.js.map",
+    "runtime~main.js": "/accelerometer-app/static/js/runtime~main.94d36c1b.js",
+    "runtime~main.js.map": "/accelerometer-app/static/js/runtime~main.94d36c1b.js.map",
+    "static/js/2.20e277fb.chunk.js": "/accelerometer-app/static/js/2.20e277fb.chunk.js",
+    "static/js/2.20e277fb.chunk.js.map": "/accelerometer-app/static/js/2.20e277fb.chunk.js.map",
+    "index.html": "/accelerometer-app/index.html",
+    "precache-manifest.9b172386e4d5f87b6341d711a28fd363.js": "/accelerometer-app/precache-manifest.9b172386e4d5f87b6341d711a28fd363.js",
+    "service-worker.js": "/accelerometer-app/service-worker.js"
+  }
+}
