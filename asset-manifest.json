@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.js": "/accelerometer-app/static/js/main.660e430e.chunk.js",
-    "main.js.map": "/accelerometer-app/static/js/main.660e430e.chunk.js.map",
-    "runtime~main.js": "/accelerometer-app/static/js/runtime~main.94d36c1b.js",
-    "runtime~main.js.map": "/accelerometer-app/static/js/runtime~main.94d36c1b.js.map",
-    "static/js/2.20e277fb.chunk.js": "/accelerometer-app/static/js/2.20e277fb.chunk.js",
-    "static/js/2.20e277fb.chunk.js.map": "/accelerometer-app/static/js/2.20e277fb.chunk.js.map",
-    "index.html": "/accelerometer-app/index.html",
-    "precache-manifest.308dd313a71230cf5e19499bdff154bb.js": "/accelerometer-app/precache-manifest.308dd313a71230cf5e19499bdff154bb.js",
-    "service-worker.js": "/accelerometer-app/service-worker.js"
+    "main.js": "/accelerometer/static/js/main.d4fb10d7.chunk.js",
+    "main.js.map": "/accelerometer/static/js/main.d4fb10d7.chunk.js.map",
+    "runtime~main.js": "/accelerometer/static/js/runtime~main.cd61ace2.js",
+    "runtime~main.js.map": "/accelerometer/static/js/runtime~main.cd61ace2.js.map",
+    "static/js/2.0676f27d.chunk.js": "/accelerometer/static/js/2.0676f27d.chunk.js",
+    "static/js/2.0676f27d.chunk.js.map": "/accelerometer/static/js/2.0676f27d.chunk.js.map",
+    "index.html": "/accelerometer/index.html",
+    "precache-manifest.881027edb94674ef0ea81220f1946a3c.js": "/accelerometer/precache-manifest.881027edb94674ef0ea81220f1946a3c.js",
+    "service-worker.js": "/accelerometer/service-worker.js"
   }
 }
