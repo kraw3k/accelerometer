@@ -1,5 +1,3 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
 ## Accelerometer app
 
 Simple app using React, WebSockets and Node.js with Express.
@@ -28,7 +26,6 @@ app.get("*", function(req, res) {
 });
 
 io.sockets.on("connection", function(socket) {
-  console.log("socket connected");
   socket.on("dataFromSensor", function(data) {
     io.emit("dataFromServer", data);
   });
