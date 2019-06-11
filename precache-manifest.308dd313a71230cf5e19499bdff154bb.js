@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "2c03ec67ef00a49f08a9727528f452de",
+    "revision": "7dcd4a210a492feffcbcbd6faead1fcc",
     "url": "/accelerometer-app/index.html"
   },
   {
@@ -8,8 +8,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/accelerometer-app/static/js/2.20e277fb.chunk.js"
   },
   {
-    "revision": "6676700b0e34799c3232",
-    "url": "/accelerometer-app/static/js/main.847d6b96.chunk.js"
+    "revision": "995b3db2ec7c59184153",
+    "url": "/accelerometer-app/static/js/main.660e430e.chunk.js"
   },
   {
     "revision": "84181f36a4a88fb565c0",
