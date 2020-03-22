@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Route, NavLink } from "react-router-dom";
+import { HashRouter, Route, NavLink } from "react-router-dom";
 import useSocket from "use-socket.io-client";
 
 import Home from "./Home";
@@ -9,33 +9,33 @@ import ClientDevice from "./ClientDevice";
 const App = () => {
   const [socket] = useSocket("https://kraw3k.ct8.pl/");
   return (
-    <Router>
+    <HashRouter basename="/">
       <div id="menu">
-        <NavLink exact to={process.env.PUBLIC_URL + "/"} activeClassName="activeLink">
+        <NavLink exact to="/" activeClassName="activeLink">
           Home
         </NavLink>
-        <NavLink exact to={process.env.PUBLIC_URL + "/sensor"} activeClassName="activeLink">
+        <NavLink exact to="/sensor" activeClassName="activeLink">
           Sensor
         </NavLink>
-        <NavLink exact to={process.env.PUBLIC_URL + "/client"} activeClassName="activeLink">
+        <NavLink exact to="/client" activeClassName="activeLink">
           Client
         </NavLink>
       </div>
       <div id="content">
-        <Route exact path={`${process.env.PUBLIC_URL}/`}>
+        <Route exact path="/">
           <Home />
         </Route>
-        <Route exact path={`${process.env.PUBLIC_URL}/client`}>
+        <Route exact path="/client">
           <ClientDevice socket={socket} />
         </Route>
-        <Route exact path={`${process.env.PUBLIC_URL}/sensor`}>
+        <Route exact path="/sensor">
           <SensorDevice socket={socket} />
         </Route>
       </div>
       <a id="websiteLink" href="https://kraw3k.github.io">
         kraw3k.github.io
       </a>
-    </Router>
+    </HashRouter>
   );
 };
 
