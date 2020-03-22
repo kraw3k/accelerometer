@@ -11,13 +11,13 @@ const App = () => {
   return (
     <Router>
       <div id="menu">
-        <NavLink exact to="/" activeClassName="activeLink">
+        <NavLink exact to={process.env.PUBLIC_URL + "/"} activeClassName="activeLink">
           Home
         </NavLink>
-        <NavLink exact to="/sensor" activeClassName="activeLink">
+        <NavLink exact to={process.env.PUBLIC_URL + "/sensor"} activeClassName="activeLink">
           Sensor
         </NavLink>
-        <NavLink exact to="/client" activeClassName="activeLink">
+        <NavLink exact to={process.env.PUBLIC_URL + "/client"} activeClassName="activeLink">
           Client
         </NavLink>
       </div>

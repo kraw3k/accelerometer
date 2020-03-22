@@ -18,16 +18,11 @@ const SensorDevice = ({ socket }) => (
         );
         return (
           <div>
-            <ul style={{ textAlign: "left" }}>
+            <ul>
               <li>x: {Math.round(position.x)}</li>
               <li>y: {Math.round(position.y)}</li>
               <li>z: {Math.round(position.z)}</li>
             </ul>
-            <h3>
-              <Link to={process.env.PUBLIC_URL + "/"}>
-                <u>go back</u>
-              </Link>
-            </h3>
           </div>
         );
       }
