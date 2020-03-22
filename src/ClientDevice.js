@@ -1,49 +1,45 @@
-import React, { useState } from "react";
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-import { useSocket } from "use-socketio";
-import styled, { ThemeProvider } from "styled-components";
-// import { Motion, spring } from "react-motion";
+import React, { useState, useEffect } from "react";
+import styled from "styled-components";
 
-const ClientDevice = () => {
-  const [data, setData] = useState();
-  const socket = useSocket("dataFromServer", data => setData(JSON.parse(data)));
+const Square = styled.div`
+  height: 10vw;
+  width: 10vw;
+  background: rgb(
+    ${props => props.position.x},
+    ${props => props.position.y},
+    ${props => props.position.z}
+  );
+  margin: 0 auto;
+`;
 
-  let theme = {
-    x: data ? `${Math.abs(data.position.x * 25)}` : "255",
-    y: data ? `${Math.abs(data.position.y * 25)}` : "255",
-    z: data ? `${Math.abs(data.position.z * 25)}` : "255"
-  };
-  const Square = styled.ul`
-    height: 10vw;
-    width: 10vw;
-    background: rgb(
-      ${props => props.theme.x},
-      ${props => props.theme.y},
-      ${props => props.theme.z}
-    );
-    margin: 0 auto;
-  `;
+const ClientDevice = ({ socket }) => {
+  const [position, setPosition] = useState(null);
 
-  return data ? (
-    <ThemeProvider theme={theme}>
-      <div>
-        <Square />
-        <p>
-          rgb({theme.x}, {theme.y}, {theme.z})
-        </p>
-      </div>
-    </ThemeProvider>
+  useEffect(() => {
+    socket.on("dataFromServer", data => {
+      const { position } = JSON.parse(data);
+      setPosition({
+        x: Math.abs(position.x * 25),
+        y: Math.abs(position.y * 25),
+        z: Math.abs(position.z * 25)
+      });
+    });
+  }, []);
+
+  return position ? (
+    <div>
+      <Square position={position} />
+      <h2>
+        rgb({position.x}, {position.y}, {position.z})
+      </h2>
+    </div>
   ) : (
     <div>
+      <h1>One more thing!</h1>
       <p>
-        Now open this site on device with accelerometer (smartphone for example)
-        and let's the magic begin!
+        Now open this site in sensor mode on device with accelerometer and ...
       </p>
-      <h5>
-        <Link to={process.env.PUBLIC_URL + "/"}>
-          <u>go back</u>
-        </Link>
-      </h5>
+      <p>... let's the magic begin!</p>
     </div>
   );
 };

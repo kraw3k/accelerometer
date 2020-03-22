@@ -11,25 +11,31 @@ In this case user can change color on page by rotating device.
 
 https://kraw3k.github.io/accelerometer
 
-## Node.js server
+## Running app
 
+There is a bug in [react-accelerometer](https://www.npmjs.com/package/react-accelerometer) library - PropTypes are not imported.
+
+`$ npm install` then: 
+
+Open **node_modules\react-accelerometer\dist\react-accelerometer.module.js**
+Add:
 ```javascript
-var express = require("express"),
-  app = express(),
-  server = require("http").createServer(app),
-  io = require("socket.io").listen(server);
-
-app.use(express.static(__dirname + "/public"));
-
-app.get("*", function(req, res) {
-  res.sendFile(__dirname + "/index.html");
-});
-
-io.sockets.on("connection", function(socket) {
-  socket.on("dataFromSensor", function(data) {
-    io.emit("dataFromServer", data);
-  });
-});
-
-server.listen(4000);
+import PropTypes from 'prop-types'
 ```
+Change:
+```javascript
+ReactAccelerometer.propTypes = {
+  children: React.PropTypes.func.isRequired,
+  multiplier: React.PropTypes.number,
+  useGravity: React.PropTypes.bool
+}
+```
+To:
+```javascript
+ReactAccelerometer.propTypes = {
+  children: PropTypes.func.isRequired,
+  multiplier: PropTypes.number,
+  useGravity: PropTypes.bool
+};
+```
+Run app `$ npm start`

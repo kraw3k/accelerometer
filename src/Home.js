@@ -1,27 +1,25 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-import styled from "styled-components";
-
-const Wrapper = styled.div`
-  /* display: flex;
-  align-items: center;
-  justify-content: center; */
-`;
 
 const Home = () => {
   return (
-    <Wrapper>
-      <h2>Choose how to use this device</h2>
+    <div>
+      <h1>About the project</h1>
+      <p>This is a simple app to interchange data in realtime.</p>
       <p>
-        <Link to={process.env.PUBLIC_URL + "/sensor"}>Sensor device</Link>
+        The idea is to send some data from one device to another.
       </p>
-      <p>
-        <Link to={process.env.PUBLIC_URL + "/client"}>Client device</Link>
-      </p>
-      <h5>
-        <a href="https://kraw3k.github.io">kraw3k.github.io</a>
-      </h5>
-    </Wrapper>
+      <h2>You need to use minimum two devices:</h2>
+      <ul>
+        <li>one of them should has accelerometer (it will send position data)</li>
+        <li>another device to display received data</li>
+      </ul>
+      <h2>Used technologies</h2>
+      <ul>
+        <li>React.js</li>
+        <li>Node.js</li>
+        <li>Socket.io</li>
+      </ul>
+    </div>
   );
 };
 export default Home;
